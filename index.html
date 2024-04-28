@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Previsão de Conta de Energia </title>
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navigation">
+    <nav><a href="#">Página do Projeto</a></nav>
+    <nav><a href="https://github.com/andrejlima">Perfil no GitHub</a></nav>
+  </nav>
+  <h1>COMPARADOR DE PREÇOS</h1>
+  <br>
+  <div class="container">
+    <div class="coll">Valor do Produto A
+      <input type="number" id="valorA" name="form" class="form" autocomplete="off">
+    </div>
+
+    <div class="coll">Quant. do Produto A
+      <input type="number" id="qtA" name="form" class="form" autocomplete="off">
+    </div>
+
+    <div class="coll" id="resultMobile">valor por unidade
+      <div id="resultA" class="coll">-</div>
+    </div>
+
+    <div class="coll">Valor do Produto B
+      <input type="number" id="valorB" name="form" class="valor form" autocomplete="off">
+    </div>
+
+    <div class="coll">Quant. do Produto B
+      <input type="number" id="qtB" name="form" class="form" autocomplete="off">
+    </div>
+
+    <div class="coll" id="resultMobile">valor por unidade
+      <div id="resultB" class="coll">-</div>
+    </div>
+  </div>
+
+  <div class="button">
+    <button id="btn" onclick="calculo()">Calcular</button>
+  </div>
+
+  <div id="finalResult" class="coll">-</div>
+
+  <script>
+    // Verifica se o parâmetro de consulta "?v=" não está presente na URL
+    if (!window.location.search.includes('v=')) {
+      // Adiciona um parâmetro de consulta único (timestamp) à URL
+      const novaURL = `${window.location.href}?v=${Date.now()}`;
+
+      // Redireciona o navegador para a nova URL
+      window.location.href = novaURL;
+    }
+    window.onload = detectarNavegador();
+  </script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
